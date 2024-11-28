@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from con import fetch_dersler
+from data import fetch_dersler
 
 app = Flask(__name__)
 
