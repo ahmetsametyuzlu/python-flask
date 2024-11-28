@@ -1,0 +1,13 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Öğrenciler{% endblock %}
+
+{% block content %}
+    <h2>Öğrencilerimiz!</h2>
+    {% for ogrenci in ogrenciler %}
+        <div>
+            {{ ogrenci.ogrenci_no }} - {{ ogrenci.isim }} ({{ ogrenci.dogum_tarihi }})
+        </div>
+    {% endfor %}
+{% endblock %}
+
