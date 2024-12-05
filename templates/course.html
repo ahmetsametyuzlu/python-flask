@@ -6,7 +6,7 @@
     <h2>Dersler</h2>
 
     {% for ders in dersler %}
-        <div>#{{ ders.ders_id }} - ({{ ders.kod }}) {{ ders.baslik }}</div>
+        <div>{{ ders.kod }} - {{ ders.baslik }}</div>
         <div>
             {{ ders.aciklama }}
         </div>

@@ -1,7 +1,8 @@
-from flask import Flask, render_template
-from data import fetch_dersler, fetch_ogrenciler
+from flask import Flask, render_template, request, redirect
+from data import fetch_dersler, insert_ders, fetch_ogrenciler
 
 app = Flask(__name__)
+
 
 @app.route("/")
 def home():
@@ -22,6 +23,19 @@ def about():
 def course():
     dersler = fetch_dersler()
     return render_template("course.html", dersler=dersler)
+
+
+@app.route("/ders-ekle")
+def course_create():
+    return render_template("course_create.html")
+
+
+@app.route("/ders-ekle-post", methods=['POST'])
+def course_create_post():
+    kod = request.form.get('kod')  # Access a specific field
+    baslik = request.form.get('baslik')  # Access a specific field
+    insert_ders(baslik, kod)
+    return redirect("/dersler")
 
 
 @app.route("/ogrenciler")
