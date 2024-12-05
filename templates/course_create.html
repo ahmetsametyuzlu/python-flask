@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Ders Ekle{% endblock %}
+
+{% block content %}
+    <h2>Ders Ekle</h2>
+    <form action="/ders-ekle-post" method="post">
+        <label for="">Kod</label>
+        <input type="text" name="kod">
+        <label for="">Başlık</label>
+        <input type="text" name="baslik">
+        <button type="submit">Gönder</button>
+    </form>
+{% endblock %}
+
