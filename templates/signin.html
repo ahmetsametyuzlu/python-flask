@@ -1,0 +1,15 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Giriş Yap{% endblock %}
+
+{% block content %}
+    <h2>Giriş Yap</h2>
+    <form method="POST" action="/giris-yap-post">
+        <label>Kullanıcı Adı:</label>
+        <input type="text" name="username"><br>
+        <label>Şifre: </label>
+        <input type="password" name="password"><br>
+        <button type="submit">Giriş Yap</button>
+    </form>
+{% endblock %}
+

@@ -12,6 +12,8 @@
         </div>
     {% endfor %}
 
+    {% if session.get('role') in ['admin',  'manager'] %}
     <a href="/ders-ekle">Ders Ekle</a>
+    {% endif %}
 {% endblock %}
 
